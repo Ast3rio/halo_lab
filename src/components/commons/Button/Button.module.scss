@@ -1,0 +1,30 @@
+@import '../../../styles/vars';
+
+.button{
+    border-radius: 16px;
+    display: block;
+}
+
+.long{
+    width: 235px;
+    height: 60px;
+    color: #fff;
+    margin: 0 auto;
+    background-color: $mainColor;
+    font-size: 2.4rem;
+}
+
+.short{
+    width: 64px;
+    height: 56px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all .3s;
+    color: $mainColor;
+    font-weight: 500;
+    text-transform: uppercase;
+    &:hover{
+        background-color: $mainColor;
+        border: 1px solid $mainColor;
+        color: #fff;
+    }
+}

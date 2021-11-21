@@ -1,0 +1,42 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(#000, 0.8);
+    z-index: 100;
+}
+
+.element{
+    width: 384px;
+    height: 536px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 54px 50px 66px 46px;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3.5rem;
+    transform: translate(25%, -25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F2F2F2;
+    border-radius: 9999%;
+    cursor: pointer;
+    p{
+        margin-top: 28px;
+    }
+}
+
+.buy{
+    text-align: center;
+}
