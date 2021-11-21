@@ -1,5 +1,13 @@
 .app{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #F2F2F2;
+    padding: 104px 0 115px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 32px;
+    margin-bottom: 69px;
 }

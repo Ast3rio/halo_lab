@@ -7,6 +7,8 @@ html{
 }
 
 body {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,7 +23,22 @@ code {
 }
 
 .container{
-  max-width: 1440px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input{
+  outline: none;
+  border: none;
 }
