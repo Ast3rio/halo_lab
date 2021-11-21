@@ -40,3 +40,11 @@
 .buy{
     text-align: center;
 }
+
+
+@media (max-width: 440px){
+    .element{
+        width: 320px;
+        padding: 25px;
+    }
+}

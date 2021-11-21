@@ -9,34 +9,29 @@ import { switchModal } from './../Modal/switchModal';
 export const App = () => {
     const {products, modal, modalType, setModalData, setModalType, setModal} = useContext(Context)
     const buyCheapest = useCallback(() => {
-        setModalType('buy-modal')
         const sortProducts = products.sort((a, b) => a.price - b.price)
-        
-        setModalData(sortProducts[0])
         setModal(true)
+        setModalType('buy-modal')
+        setModalData(sortProducts[0])
     }, [setModal, setModalData, setModalType, products])
-    
-    console.log(modalType);
 
     return (
-        <>
+        <div className={styles.app}>
             {modal && <Modal>
-                    {switchModal(modalType)}
-                </Modal>}
-            <div className={styles.app}>
-                <div className="container">
-                    <div className={styles.wrapper}>
-                    {products?.map(({name, category, price}) => <ProductCard 
-                        key={name}
-                        name={name}
-                        category={category}
-                        price={price}
-                    />)}
-                    </div>
-                    <Button long={true} handleClick={buyCheapest} label={'Buy cheapest'} />
+                {switchModal(modalType)}
+            </Modal>}
+            <div className="container">
+                <div className={styles.wrapper}>
+                {products?.map(({name, category, price}) => <ProductCard 
+                    key={name}
+                    name={name}
+                    category={category}
+                    price={price}
+                />)}
                 </div>
+                <Button long={true} handleClick={buyCheapest} label={'Buy cheapest'} />
             </div>
-        </>
+        </div>
     );
 };
 

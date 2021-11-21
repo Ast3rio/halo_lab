@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     background-color: #F2F2F2;
-    padding: 104px 0 115px;
+    padding: 0 0 115px 0;
 }
 
 .wrapper{
@@ -10,4 +10,20 @@
     grid-template-columns: auto auto auto;
     gap: 32px;
     margin-bottom: 69px;
+    padding-top: 104px;
+}
+
+@media (max-width: 1200px){
+    .wrapper{
+        max-width: 750px;
+        margin: 0 auto 69px;
+        grid-template-columns: auto auto; 
+    }
+}
+
+@media (max-width: 770px){
+    .wrapper{
+        max-width: 355px;
+        grid-template-columns: auto;    
+    }
 }
