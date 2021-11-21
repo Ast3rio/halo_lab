@@ -1,4 +1,5 @@
 import React from 'react';
+import { arrowIcon } from '../../../assets/importImages';
 import styles from './Button.module.scss';
 
 const Button = ({long = false, modal = false, label = '', handleClick}) => {
@@ -9,6 +10,7 @@ const Button = ({long = false, modal = false, label = '', handleClick}) => {
             style={modal ? {width: '100%', height: '56px', marginTop: '32px'} : {}}
         >
             {label}
+            {modal && <img src={arrowIcon} alt="arrow" />}
         </button>
     );
 };
