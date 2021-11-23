@@ -16,16 +16,6 @@ const BuyModal = () => {
     const {modalData, name, setName, number, setNumber} = useContext(Context)
     const [errorName, setErrorName] = useState(null)
     const [errorNumber, setErrorNumber] = useState(null)
-    
-    const changeName = useCallback((event) => {
-        setName(event.target.value)
-        setErrorName(null)
-    }, [setName])
-
-    const changeNumber = useCallback((event) => {
-        setNumber(event.target.value)
-        setErrorNumber(null)
-    }, [setNumber])
 
     const validationName = useCallback(() => {
         if(name === '') {
@@ -33,6 +23,9 @@ const BuyModal = () => {
         }
         if(!onlyLetters.test(name)) {
             return setErrorName('letters')
+        }
+        if(onlyLetters.test(name)) {
+            return setErrorName(null)
         }
     }, [name])
 
@@ -43,10 +36,26 @@ const BuyModal = () => {
         if(!onlyNumbers.test(number)) {
             return setErrorNumber('numbers')
         }
-        if(number.length < 12) {
+        if(number.length + 1 < 12) {
             return setErrorNumber('length')
         }
     }, [number])
+    
+    const changeName = useCallback((event) => {
+        setName(event.target.value)
+        setErrorName(null)
+    }, [setName])
+
+    const changeNumber = useCallback((event) => {
+        setNumber(event.target.value)
+        setErrorNumber(null)
+        validationNumber()
+    }, [setNumber, validationNumber])
+    
+    const handleBlur = useCallback(() => {
+        validationName()
+        validationNumber()
+    }, [validationName, validationNumber])
 
     const sentOrder = useCallback(() => {
         validationName()
@@ -71,6 +80,7 @@ const BuyModal = () => {
                 value={name}
                 handleChange={changeName}
                 error={errorName}
+                handleBlur={handleBlur}
             />
             <ErrorText>
                 {validationText(errorName)}
@@ -81,6 +91,7 @@ const BuyModal = () => {
                 value={number}
                 handleChange={changeNumber}
                 error={errorNumber}
+                handleBlur={handleBlur}
             />
             <ErrorText>
                 {validationText(errorNumber)}

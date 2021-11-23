@@ -3,7 +3,7 @@ import { errorIcon } from '../../../assets/importImages';
 import styles from './Input.module.scss';
 
 
-const Input = ({placeholder, name, value, handleChange, error}) => { 
+const Input = ({placeholder, name, value, handleChange, handleBlur, error}) => { 
     return (
         <div className={styles.wrapper}>
             <input 
@@ -12,6 +12,7 @@ const Input = ({placeholder, name, value, handleChange, error}) => {
                 name={name}
                 value={value}
                 onChange={handleChange}
+                onBlur={handleBlur}
             />
             {error && <img className={styles.error_img} src={errorIcon} alt="error" />}
         </div>
